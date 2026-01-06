@@ -4,7 +4,7 @@ The Fabric Inventory Tool collects metadata about all items in all workspaces in
 The purpose is to help organizations understand what fabric items they have, when they are created, and how long they live.
 
 # Prerequisites
-* You must have a Fabric Workspace, capable of running notebooks, and creating lakehouses
+* You must have a Fabric Workspace, capable of running notebooks and creating lakehouses
 * The user that owns the notebook must have permissions across the environment in order to obtain full inventory.
 
 # Which Files do I Need?
