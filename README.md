@@ -8,7 +8,7 @@ The purpose is to help organizations understand what fabric items they have, whe
 * The user that owns the notebook must have permissions across the envrionment in order to obtain full inventory.
 
 # Which Files do I Need?
-There are 3 files needed to install/use this tool:
+There are 3 files needed to install/use this tool, located in the 'files' folder:
 * FabricInventoryTool_Setup - a notebook that you need to run only once to setup the lakehouse and tables needed.
 * FabricInventoryTool_Process - a notebook that you can schedule to run as often as you like, that reads in the inventory metadata
 * FabricInventory.pbit - A PowerBI Report template, that you'll point to your lakehouse (created in the Setup notebook)
