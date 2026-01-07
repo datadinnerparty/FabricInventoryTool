@@ -20,7 +20,7 @@ If you want to contribute to this project, create a branch and pull request here
 * Queries the metadata of all workspaces and tracks what objects exist. 
 * Provides a templated, parameterized report for quick and easy deployment
 
-
+![Measure description](/images/overview.png)
 
 
 # Metadata Included in the Model Catalog
