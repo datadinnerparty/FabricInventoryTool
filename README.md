@@ -5,7 +5,14 @@ The purpose is to help organizations understand what fabric items they have, whe
 
 # Prerequisites
 * You must have a Fabric Workspace, capable of running notebooks and creating lakehouses
-* The user that owns the notebook must have permissions across the environment in order to obtain full inventory.
+* The user that owns the notebook must have permissions to the desired workspaced where the lakehouse resides.
+* The user that owns the notebook MUST have permissions to write to the lakehouse
+* You must have a service principal created.  You'll need the tenant_id, client_id and secret
+* You must have a configured keyvault, with the tenantid, clientid and secret as separate keys in the same keyvault
+* the service principal and the notebook owner must have at least read access to the keyvault
+* the service principal must be within a security group
+* the security group that contains the service principale must be enabled ot use the fabric apis, and the fabric admin apis.
+* fabric apis (including admin apis) must be enabled in the tenant settings.
 
 # Which Files do I Need?
 There are 3 files needed to install/use this tool, located in the 'files' folder:

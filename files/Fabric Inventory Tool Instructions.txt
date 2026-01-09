@@ -1,0 +1,21 @@
+Fabric Inventory Tool Instructions
+
+INITIAL SETUP
+Upload the FabricInventoryTool_Setup notebook to a Fabric workspace
+In the second cell, enter your desired lakehouse/workspace names
+Execute the notebook
+
+After notebook completes, you can delete the setup notebook
+
+POWERBI MODEL/REPORT
+Open the FabricInventory.pbit file in PBI Desktop
+Enter the server, lakehouse, and schema name created by the Setup notebook.
+Save the template as a pbix file (can be pbip if using git)
+Publish the model/report to the same workspace as the notebooks (can also be published via git)
+
+PROCESS NOTEBOOK
+Upload the process notebook to the workspace
+In the second cell, update the parameters to the desired names.  (The workspace/lakehouse/schema names MUST match the ones used in the setup notebook)
+Execute the notebook for initial run.
+Schedule the notebook, or configure a pipeline to execute the notebook on a schedule.  
+
