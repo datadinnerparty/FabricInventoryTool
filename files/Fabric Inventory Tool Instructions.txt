@@ -1,4 +1,11 @@
 Fabric Inventory Tool Instructions
+PREREQUISITES
+* You must have a Fabric Workspace and Capacity already configured.
+* You must have a service principal created.  The service principal must be in a security group. (You'll need the principal info [ClientID, tenanted,client secret] and the name of the security group.  This security group will have access to the Fabric Admin APIS, so you may want a new group.
+* The service principal must have permissions to the workspace where the lakehouse and notebook will reside.  Contributer or greater.  Also must ensure access to the lakehouse, to read and write data.
+* You must have a keyvault created, with permissions for the service principal (GET/LIST at a minimum).
+  The keyvault must have 3 secrets within it: TenantID, ClientID, ClientSecret.
+
 
 INITIAL SETUP
 Upload the FabricInventoryTool_Setup notebook to a Fabric workspace
