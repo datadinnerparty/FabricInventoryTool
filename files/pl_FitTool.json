@@ -1,0 +1,49 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "Notebook-FitTool 85ba771a": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "name": "pl_FitTool",
+            "type": "pipelines",
+            "apiVersion": "2018-06-01",
+            "properties": {
+                "activities": [
+                    {
+                        "name": "update fabric values",
+                        "type": "TridentNotebook",
+                        "dependsOn": [],
+                        "policy": {
+                            "timeout": "0.12:00:00",
+                            "retry": 0,
+                            "retryIntervalInSeconds": 30,
+                            "secureOutput": false,
+                            "secureInput": false
+                        },
+                        "typeProperties": {
+                            "notebookId": "fb5ca508-dc72-4b0d-9581-493517ed211c",
+                            "workspaceId": "27f02a27-846c-48d8-930d-52632832c763",
+                            "parameters": {
+                                "_inlineInstallationEnabled": {
+                                    "value": "True",
+                                    "type": "bool"
+                                }
+                            }
+                        },
+                        "externalReferences": {
+                            "connection": "[parameters('Notebook-FitTool 85ba771a')]"
+                        }
+                    }
+                ],
+                "lastModifiedByObjectId": "73fc11a3-5152-44a1-a989-8f6c617e5f23",
+                "lastPublishTime": "2026-01-12T20:50:05Z"
+            },
+            "dependsOn": []
+        }
+    ]
+}

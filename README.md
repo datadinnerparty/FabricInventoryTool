@@ -14,6 +14,8 @@ The purpose is to help organizations understand what fabric items they have, whe
 * the security group that contains the service principale must be enabled ot use the fabric apis, and the fabric admin apis.
 * fabric apis (including admin apis) must be enabled in the tenant settings.
 
+Specific directions for configuring the Service Principal and Key Vault are included in the [Prerequisite Document](Prerequisites - Fabric Inventory Tool.docx) file
+
 # Which Files do I Need?
 There are 3 files needed to install/use this tool, located in the 'files' folder:
 * FabricInventoryTool_Setup - a notebook that you need to run only once to setup the lakehouse and tables needed.

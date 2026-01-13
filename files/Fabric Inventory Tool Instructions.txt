@@ -25,4 +25,6 @@ Upload the process notebook to the workspace
 In the second cell, update the parameters to the desired names.  (The workspace/lakehouse/schema names MUST match the ones used in the setup notebook)
 Execute the notebook for initial run.
 Schedule the notebook, or configure a pipeline to execute the notebook on a schedule.  
+Note, if you schedule the notebook using the native notebook scheduler, the owner of the notebook must have permissions to the workspace AND read/write on the lakehouse.  If you configure a pipeline, then the notebook connection can be configured to the service principal, which means the entire notebook can be run under the service principal account.
 
+PIPELINE - There is a sample pipeline json file that can be imported.  the name of the notebook, the connection, and the schedule would need to be updated fo your environment
