@@ -43,4 +43,5 @@ If you want to contribute to this project, create a branch and pull request here
 The FabricInventoryTool_Process notebook can be scheduled directly within the workspace, or included in a pipeline.
 The Power BI Semantic Model will be triggered by the notebook, although you can also configure an auto refresh as you would any other Power BI model.
 
-
+# Release Notes
+* 4/20/2026 - Initial Release

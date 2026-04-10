@@ -5,6 +5,10 @@ PREREQUISITES
 * The service principal must have permissions to the workspace where the lakehouse and notebook will reside.  Contributer or greater.  Also must ensure access to the lakehouse, to read and write data.
 * You must have a keyvault created, with permissions for the service principal (GET/LIST at a minimum).
   The keyvault must have 3 secrets within it: TenantID, ClientID, ClientSecret.
+* The security group (that contains your service principal) MUST be added to these admin portal options:
+     Service principals can call Fabric public APIs
+     Service principals can access read-only admin APIs
+     Service principals can access admin APIs used for updates
 
 
 INITIAL SETUP
@@ -27,4 +31,5 @@ Execute the notebook for initial run.
 Schedule the notebook, or configure a pipeline to execute the notebook on a schedule.  
 Note, if you schedule the notebook using the native notebook scheduler, the owner of the notebook must have permissions to the workspace AND read/write on the lakehouse.  If you configure a pipeline, then the notebook connection can be configured to the service principal, which means the entire notebook can be run under the service principal account.
 
-PIPELINE - There is a sample pipeline json file that can be imported.  the name of the notebook, the connection, and the schedule would need to be updated fo your environment
+PIPELINE - If desired, a pipeline coudld be created, to execute the notebook, refresh the lakehouse and refresh the model.  
+This functionality could also be added to an existing pipeline
