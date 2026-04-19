@@ -1,0 +1,35 @@
+Fabric Inventory Tool Instructions
+PREREQUISITES
+* You must have a Fabric Workspace and Capacity already configured.
+* You must have a service principal created.  The service principal must be in a security group. (You'll need the principal info [ClientID, tenanted,client secret] and the name of the security group.  This security group will have access to the Fabric Admin APIS, so you may want a new group.
+* The service principal must have permissions to the workspace where the lakehouse and notebook will reside.  Contributer or greater.  Also must ensure access to the lakehouse, to read and write data.
+* You must have a keyvault created, with permissions for the service principal (GET/LIST at a minimum).
+  The keyvault must have 3 secrets within it: TenantID, ClientID, ClientSecret.
+* The security group (that contains your service principal) MUST be added to these admin portal options:
+     Service principals can call Fabric public APIs
+     Service principals can access read-only admin APIs
+     Service principals can access admin APIs used for updates
+
+
+INITIAL SETUP
+Upload the FabricInventoryTool_Setup notebook to a Fabric workspace
+In the second cell, enter your desired lakehouse/workspace names
+Execute the notebook
+
+After notebook completes, you can delete the setup notebook
+
+POWERBI MODEL/REPORT
+Open the FabricInventory.pbit file in PBI Desktop
+Enter the server, lakehouse, and schema name created by the Setup notebook.
+Save the template as a pbix file (can be pbip if using git)
+Publish the model/report to the same workspace as the notebooks (can also be published via git)
+
+PROCESS NOTEBOOK
+Upload the process notebook to the workspace
+In the second cell, update the parameters to the desired names.  (The workspace/lakehouse/schema names MUST match the ones used in the setup notebook)
+Execute the notebook for initial run.
+Schedule the notebook, or configure a pipeline to execute the notebook on a schedule.  
+Note, if you schedule the notebook using the native notebook scheduler, the owner of the notebook must have permissions to the workspace AND read/write on the lakehouse.  If you configure a pipeline, then the notebook connection can be configured to the service principal, which means the entire notebook can be run under the service principal account.
+
+PIPELINE - If desired, a pipeline coudld be created, to execute the notebook, refresh the lakehouse and refresh the model.  
+This functionality could also be added to an existing pipeline
